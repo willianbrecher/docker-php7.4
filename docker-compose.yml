@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: docker-php7.4
+    image: docker-php7.4
+    volumes:
+        - ./html:/var/www/html:delegated
+    ports:
+      - 8080:80
+    network_mode: bridge
